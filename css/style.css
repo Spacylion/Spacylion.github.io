@@ -70,7 +70,7 @@ body {
 
 .wrapper {
   max-width: 1170px;
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
   padding: 29px 0 145px 0;
   position: relative;
@@ -1236,7 +1236,7 @@ textarea:focus {
   .burger-menu {
     position: absolute;
     top: 2em;
-    right: -2em;
+    right: -3em;
   }
 
   .trends {
