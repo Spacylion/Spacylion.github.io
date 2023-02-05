@@ -18,6 +18,9 @@
 
 a {
   cursor: pointer;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-weight: 700;
 }
 
 h1,
@@ -124,7 +127,7 @@ body {
   text-decoration: none;
 }
 
-/*TRANDS NOW*/
+/*TRENDS*/
 
 .section-title-top {
   display: block;
@@ -777,7 +780,7 @@ input::placeholder {
 }
 
 .dribble {
-  background-image: url(../svg/001-dribble.svg);
+  background-image: url(../svg/001-dribbble.svg);
 }
 .pinterest {
   background-image: url(../svg/001-pinterest.svg);
@@ -786,18 +789,8 @@ input::placeholder {
   background-image: url(../svg/003-tumblr.svg);
 }
 
-//hiddn
-//{
-.twitter {
-  background-image: url(../svg/004-twitter.svg);
-}
-.instagram {
-  background-image: url(../svg/005-instagram.svg);
-}
-//}
-// hiddn
 .copyright-link {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: #999999;
   line-height: normal;
@@ -829,14 +822,14 @@ input::placeholder {
 }
 
 .popup-form {
+  position: sticky;
+  box-sizing: border-box;
   width: 392px;
   height: 589px;
-  position: sticky;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 55px 30px 50px;
-  box-sizing: border-box;
   background-color: #ffffff;
 }
 
@@ -1006,13 +999,13 @@ textarea:focus {
     padding-top: 100px;
   }
 
-  .burger-line {
+  .burger-1 {
     background-color: rgb(255, 255, 255);
     width: 23px;
     height: 4px;
   }
 
-  .burger-line-middle {
+  .burger-2 {
     margin: 5px 0;
   }
 
@@ -1240,7 +1233,7 @@ textarea:focus {
     line-height: 1.385;
   }
 
-  .burger {
+  .burger-menu {
     position: absolute;
     top: 2em;
     right: -2em;
