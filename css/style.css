@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Open Sans";
-  src: url(../fonts/OpenSans-Regular.woff) format("woff"),
-    url(../fonts/OpenSans-Regular.woff2) format("woff2"),
-    url(../fonts/OpenSans-Regular.ttf) format("truetype");
-  font-weight: 400;
+  src: url(../fonts/OpenSans-Bold.woff) format("woff"),
+    url(../fonts/OpenSans-Bold.woff2) format("woff2"),
+    url(../fonts/OpenSans-Bold.ttf) format("truetype");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url(../fonts/OpenSans-Bold.woff) format("woff"),
-    url(../fonts/OpenSans-Bold.woff2) format("woff2"),
-    url(../fonts/OpenSans-Bold.ttf) format("truetype");
-  font-weight: 700;
+  src: url(../fonts/OpenSans-Regular.woff) format("woff"),
+    url(../fonts/OpenSans-Regular.woff2) format("woff2"),
+    url(../fonts/OpenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -43,7 +43,7 @@ body {
 
 /* НEADER */
 
-.header-styles {
+.header {
   background-color: #000000;
   background-image: url(../images/banner-bg.jpg);
   background-repeat: no-repeat;
@@ -53,7 +53,7 @@ body {
   margin-bottom: 64px;
 }
 
-.header-styles::after {
+.header::after {
   content: "";
   display: block;
   width: 100%;
@@ -776,25 +776,26 @@ input::placeholder {
   padding-left: 20px;
 }
 
+.dribble {
+  background-image: url(../svg/001-dribble.svg);
+}
 .pinterest {
   background-image: url(../svg/001-pinterest.svg);
 }
-.facebook {
-  background-image: url(../svg/002-facebook-logo.svg);
-}
-
 .tumblr {
   background-image: url(../svg/003-tumblr.svg);
 }
 
+//hiddn
+//{
 .twitter {
   background-image: url(../svg/004-twitter.svg);
 }
-
 .instagram {
   background-image: url(../svg/005-instagram.svg);
 }
-
+//}
+// hiddn
 .copyright-link {
   font-size: 12px;
   font-weight: 700;
@@ -804,7 +805,7 @@ input::placeholder {
   text-decoration: none;
 }
 
-/* POPUP */
+/* popup */
 
 .cover-popup {
   visibility: hidden;
@@ -987,7 +988,7 @@ textarea:focus {
 }
 
 @media (max-width: 1200px) {
-  .header-styles {
+  .header {
     max-width: 1200px;
     width: 100%;
     background-image: url(../images/banner-bg-tablet.jpg);
@@ -1203,7 +1204,7 @@ textarea:focus {
 }
 
 @media (max-width: 640px) {
-  .header-styles {
+  .header {
     max-width: 640px;
     width: 100%;
     background-image: url(../images/banner-mobile.jpg);
