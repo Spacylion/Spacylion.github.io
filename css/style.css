@@ -278,7 +278,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: none;
-  background: #f3f2f2 url(../svg/form-arrows.svg) no-repeat right 10px center;
+  background: #f3f2f2 url("../svg/form-arrows.svg") no-repeat right 10px center;
   background-size: 8px;
 }
 .question-select:focus,
@@ -1029,28 +1029,22 @@ body {
   outline: 1px solid #b59f5b;
   outline-offset: 5px;
 }
+.social-icons-link-pinterest {
+  background: url("../svg/001-pinterest.svg") no-repeat center;
+  background-size: 100%;
+}
+
+.social-icons-link-drbl {
+  background: url("../svg/001-dribbble.svg") no-repeat center;
+  background-size: 100%;
+}
 .social-icons-link-twitter {
-  background: url("../svg/twitter.svg") no-repeat center;
+  background: url("../svg/004-twitter.svg") no-repeat center;
   width: 25px;
   height: 25px;
   background-size: 100%;
 }
-.social-icons-link-pinterest {
-  background: url("../svg/pinterest.svg") no-repeat center;
-  background-size: 100%;
-}
-.social-icons-link-facebook {
-  background: url("../svg/facebook.svg") no-repeat center;
-  background-size: 100%;
-}
-.social-icons-link-instagram {
-  background: url("../svg/instagram.svg") no-repeat center;
-  background-size: 100%;
-}
-.social-icons-link-tumblr {
-  background: url("../svg/tumblr.svg") no-repeat center;
-  background-size: 100%;
-}
+
 .copyright-container {
   text-align: center;
   margin-top: 70px;
