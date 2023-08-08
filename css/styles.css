@@ -1,0 +1,451 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url("../i/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right;
+}
+
+.page-header {
+  padding: 1.4rem;
+}
+
+.page-header__title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 3.4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.page-header__title span {
+  font-weight: 100;
+}
+
+/* ~~~~~~~~~~~~ Главная ~~~~~~~~~~~~ */
+.page-nav {
+  position: sticky;
+  top: 2px;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  color: #000000;
+  z-index: 10;
+}
+.page-nav .page-nav__day {
+  flex-basis: calc(100% / 8);
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  text-decoration: none;
+  color: #000000;
+}
+.page-nav .page-nav__day + .page-nav__day {
+  margin-left: 1px;
+}
+.page-nav .page-nav__day .page-nav__day-week::after {
+  content: ",";
+}
+.page-nav .page-nav__day .page-nav__day-number::before {
+  content: " ";
+}
+.page-nav .page-nav__day .page-nav__day-week,
+.page-nav .page-nav__day .page-nav__day-number {
+  display: block;
+}
+.page-nav .page-nav__day_chosen {
+  flex-grow: 1;
+  background-color: #ffffff;
+  font-weight: 700;
+  transform: scale(1.1);
+}
+.page-nav .page-nav__day_weekend {
+  color: #de2121;
+}
+.page-nav .page-nav__day_next {
+  text-align: center;
+}
+.page-nav .page-nav__day_next::before {
+  content: ">";
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+.page-nav .page-nav__day_today .page-nav__day-week::before {
+  content: "Сегодня";
+  display: block;
+}
+.page-nav .page-nav__day_today .page-nav__day-week,
+.page-nav .page-nav__day_today .page-nav__day-number {
+  display: inline;
+}
+
+.movie {
+  position: relative;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  background: rgba(241, 235, 230, 0.95);
+  color: #000000;
+}
+.movie .movie__info {
+  display: flex;
+}
+.movie .movie__poster {
+  position: relative;
+  width: 12.5rem;
+  height: 17.5rem;
+  /*    left: 1.5rem;
+      top: -1.5rem;*/
+}
+.movie .movie__poster .movie__poster-image {
+  position: relative;
+  top: -3rem;
+  width: 12.5rem;
+  height: 17.5rem;
+}
+.movie .movie__poster::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -0.7rem;
+  top: -3rem;
+  border: 1.5rem solid transparent;
+  border-bottom: 0 solid transparent;
+  border-right: 0 solid transparent;
+  border-left: 0.7rem solid #772720;
+}
+.movie .movie__description {
+  flex-grow: 1;
+  padding-left: 1.5rem;
+}
+.movie .movie__title {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.movie .movie__synopsis {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+.movie .movie__data {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+.movie .movie-seances__hall + .movie-seances__hall {
+  margin-top: 2rem;
+}
+.movie .movie-seances__hall .movie-seances__hall-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.movie .movie-seances__hall .movie-seances__list {
+  margin-top: 0.7rem;
+  font-size: 0;
+}
+.movie .movie-seances__hall .movie-seances__time-block {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.movie .movie-seances__hall .movie-seances__time-block:nth-last-of-type(n + 1) {
+  margin-right: 4px;
+}
+.movie .movie-seances__hall .movie-seances__time {
+  display: block;
+  padding: 8px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* ~~~~~~~~~~~~ Кинозал ~~~~~~~~~~~~ */
+.acceptin-button {
+  display: block;
+  margin: 3rem auto 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.24), 0px 0px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  border: none;
+  padding: 12px 57px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.4rem;
+  background-color: #16a6af;
+  color: #ffffff;
+}
+
+.buying {
+  background-color: rgba(241, 235, 230, 0.95);
+  padding-bottom: 3rem;
+}
+
+.buying__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.buying__info .buying__info-description {
+  padding-right: 1.5rem;
+}
+.buying__info .buying__info-title,
+.buying__info .buying__info-hall {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.buying__info .buying__info-start {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 0.7rem 0;
+}
+.buying__info .buying__info-hint {
+  position: relative;
+  font-weight: 300;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.buying__info .buying__info-hint p {
+  position: relative;
+  width: 10rem;
+}
+.buying__info .buying__info-hint p::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: calc(50% - 1.6rem);
+  display: block;
+  width: 2.4rem;
+  height: 3.2rem;
+  background-image: url(../i/hint.png);
+  background-size: 2.4rem 3.2rem;
+}
+
+.conf-step {
+  text-align: center;
+  background-color: #171d24;
+  padding: 1.5rem 3rem 1.5rem;
+}
+
+.conf-step__wrapper {
+  font-size: 0;
+  display: inline-block;
+  background-image: url(../i/screen.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-top: 3rem;
+}
+.conf-step__wrapper::before {
+  content: "";
+}
+
+.conf-step__row + .conf-step__row {
+  margin-top: 4px;
+}
+
+.conf-step__chair {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #525252;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.conf-step__chair:not(:first-of-type) {
+  margin-left: 4px;
+}
+
+.conf-step__chair_disabled {
+  opacity: 0;
+}
+
+.conf-step__chair_standart {
+  background-color: #ffffff;
+}
+
+.conf-step__chair_vip {
+  background-color: #f9953a;
+}
+
+.conf-step__chair_taken {
+  background-color: transparent;
+}
+
+.conf-step__chair_selected {
+  background-color: #25c4ce;
+  box-shadow: 0px 0px 4px #16a6af;
+  transform: scale(1.2);
+}
+
+.conf-step__legend {
+  padding-top: 3rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: left;
+}
+.conf-step__legend .col {
+  max-width: 25rem;
+}
+.conf-step__legend .col:first-of-type {
+  padding-right: 1.5rem;
+  margin-left: auto;
+}
+.conf-step__legend .col:last-of-type {
+  margin-right: auto;
+}
+.conf-step__legend .conf-step__legend-price + .conf-step__legend-price {
+  margin-top: 1rem;
+}
+
+/* ~~~~~~~~~~~~ Билет ~~~~~~~~~~~~ */
+.tichet__check,
+.ticket__info-wrapper {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: rgba(241, 235, 230, 0.95);
+}
+
+.tichet__check {
+  position: relative;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.tichet__check::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: url(../i/border-top.png);
+  background-size: 10px 3px;
+}
+.tichet__check::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: url(../i/border-bottom.png);
+  background-size: 10px 3px;
+}
+
+.ticket__info-wrapper {
+  position: relative;
+  margin-top: 6px;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.ticket__info-wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: url(../i/border-top.png);
+  background-size: 10px 3px;
+}
+.ticket__info-wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: url(../i/border-bottom.png);
+  background-size: 10px 3px;
+}
+
+.ticket__check-title {
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #c76f00;
+}
+
+.ticket__info {
+  font-size: 1.6rem;
+  color: #000000;
+}
+.ticket__info + .ticket__info {
+  margin-top: 1rem;
+}
+
+.ticket__details {
+  font-weight: 700;
+}
+
+.ticket__hint {
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin-top: 3rem;
+}
+.ticket__hint + .ticket__hint {
+  margin-top: 1rem;
+}
+
+.ticket__info-qr {
+  display: block;
+  margin: 3rem auto 0;
+  width: 20rem;
+  height: 20rem;
+}
+
+@media screen and (min-width: 479px) {
+  .page-nav .page-nav__day {
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (min-width: 990px) {
+  .page-header,
+  nav,
+  main {
+    width: 990px;
+    margin: auto;
+  }
+
+  .movie,
+  .buying {
+    border-radius: 2px;
+  }
+
+  .buying__info-hint {
+    display: none;
+  }
+}
+
+/*================================================================*/
+
+.movie .movie-seances__hall .acceptin-button-disabled {
+  background-color: #888888;
+  pointer-events: none;
+}
+
+.acceptin-button:disabled {
+  background-color: #888888;
+  pointer-events: none;
+}

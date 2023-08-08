@@ -1,0 +1,494 @@
+$font-stack: "Roboto", sans-serif;
+
+$black: #000000;
+$white: #ffffff;
+$green: #16a6af;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-stack;
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url("../i/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right;
+}
+
+.page-header {
+  padding: 1.4rem;
+}
+
+.page-header__title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 3.4rem;
+  color: $white;
+  text-transform: uppercase;
+
+  span {
+    font-weight: 100;
+  }
+}
+
+/* ~~~~~~~~~~~~ Главная ~~~~~~~~~~~~ */
+
+.page-nav {
+  position: sticky;
+  top: 2px;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  color: $black;
+  z-index: 10;
+
+  .page-nav__day {
+    flex-basis: calc(100% / 8);
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    text-decoration: none;
+    color: $black;
+
+    & + .page-nav__day {
+      margin-left: 1px;
+    }
+
+    .page-nav__day-week::after {
+      content: ",";
+    }
+
+    .page-nav__day-number::before {
+      content: " ";
+    }
+
+    .page-nav__day-week,
+    .page-nav__day-number {
+      display: block;
+    }
+  }
+
+  .page-nav__day_chosen {
+    flex-grow: 1;
+    background-color: $white;
+    font-weight: 700;
+    transform: scale(1.1);
+  }
+
+  .page-nav__day_weekend {
+    color: #de2121;
+  }
+
+  .page-nav__day_next {
+    text-align: center;
+
+    &::before {
+      content: ">";
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 2.4rem;
+    }
+  }
+
+  .page-nav__day_today {
+    .page-nav__day-week::before {
+      content: "Сегодня";
+      display: block;
+    }
+    .page-nav__day-week,
+    .page-nav__day-number {
+      display: inline;
+    }
+  }
+}
+
+.movie {
+  position: relative;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  background: rgba(241, 235, 230, 0.95);
+  color: $black;
+
+  .movie__info {
+    display: flex;
+  }
+
+  .movie__poster {
+    position: relative;
+    width: 12.5rem;
+    height: 17.5rem;
+    /*    left: 1.5rem;
+    top: -1.5rem;*/
+
+    .movie__poster-image {
+      position: relative;
+      top: -3rem;
+      width: 12.5rem;
+      height: 17.5rem;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -0.7rem;
+      top: -3rem;
+      border: 1.5rem solid transparent;
+      border-bottom: 0 solid transparent;
+      border-right: 0 solid transparent;
+      border-left: 0.7rem solid rgb(119, 39, 32);
+    }
+  }
+
+  .movie__description {
+    flex-grow: 1;
+    padding-left: 1.5rem;
+  }
+
+  .movie__title {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  .movie__synopsis {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+
+  .movie__data {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-top: 1rem;
+  }
+
+  .movie-seances__hall {
+    & + .movie-seances__hall {
+      margin-top: 2rem;
+    }
+
+    .movie-seances__hall-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    .movie-seances__list {
+      margin-top: 0.7rem;
+      font-size: 0;
+    }
+
+    .movie-seances__time-block {
+      display: inline-block;
+      margin-bottom: 4px;
+
+      &:nth-last-of-type(n + 1) {
+        margin-right: 4px;
+      }
+    }
+
+    .movie-seances__time {
+      display: block;
+      padding: 8px;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24),
+        0px 0px 2px rgba(0, 0, 0, 0.12);
+      border-radius: 2px;
+      background-color: $white;
+      color: $black;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* ~~~~~~~~~~~~ Кинозал ~~~~~~~~~~~~ */
+
+.acceptin-button {
+  display: block;
+  margin: 3rem auto 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.24), 0px 0px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  border: none;
+  padding: 12px 57px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.4rem;
+  background-color: $green;
+  color: $white;
+}
+
+.buying {
+  background-color: rgba(241, 235, 230, 0.95);
+  padding-bottom: 3rem;
+}
+
+.buying__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+
+  .buying__info-description {
+    padding-right: 1.5rem;
+  }
+
+  .buying__info-title,
+  .buying__info-hall {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .buying__info-start {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin: 0.7rem 0;
+  }
+
+  .buying__info-hint {
+    position: relative;
+    font-weight: 300;
+    font-size: 1.4rem;
+    text-align: center;
+
+    p {
+      position: relative;
+      width: 10rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -1rem;
+        top: calc(50% - 1.6rem);
+        display: block;
+        width: 2.4rem;
+        height: 3.2rem;
+        background-image: url(../i/hint.png);
+        background-size: 2.4rem 3.2rem;
+      }
+    }
+  }
+}
+
+.buying-scheme {
+  text-align: center;
+  background-color: #171d24;
+  padding: 1.5rem 3rem 1.5rem;
+}
+
+.buying-scheme__wrapper {
+  font-size: 0;
+  display: inline-block;
+  background-image: url(../i/screen.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-top: 3rem;
+
+  &::before {
+    content: "";
+  }
+}
+
+.buying-scheme__row + .buying-scheme__row {
+  margin-top: 4px;
+}
+
+.buying-scheme__chair {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #525252;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  &:not(:first-of-type) {
+    margin-left: 4px;
+  }
+}
+
+.buying-scheme__chair_disabled {
+  opacity: 0;
+}
+
+.buying-scheme__chair_standart {
+  background-color: $white;
+}
+
+.buying-scheme__chair_taken {
+  background-color: transparent;
+}
+
+.buying-scheme__chair_vip {
+  background-color: #f9953a;
+}
+
+.buying-scheme__chair_selected {
+  background-color: #25c4ce;
+  box-shadow: 0px 0px 4px #16a6af;
+  transform: scale(1.2);
+}
+
+.buying-scheme__legend {
+  padding-top: 3rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: $white;
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: left;
+
+  .col {
+    max-width: 25rem;
+
+    &:first-of-type {
+      padding-right: 1.5rem;
+      margin-left: auto;
+    }
+
+    &:last-of-type {
+      margin-right: auto;
+    }
+  }
+
+  .buying-scheme__legend-price + .buying-scheme__legend-price {
+    margin-top: 1rem;
+  }
+}
+
+/* ~~~~~~~~~~~~ Билет ~~~~~~~~~~~~ */
+
+.tichet__check,
+.ticket__info-wrapper {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: rgba(241, 235, 230, 0.95);
+}
+
+.tichet__check {
+  position: relative;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-image: url(../i/border-top.png);
+    background-size: 10px 3px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-image: url(../i/border-bottom.png);
+    background-size: 10px 3px;
+  }
+}
+
+.ticket__info-wrapper {
+  position: relative;
+  margin-top: 6px;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-image: url(../i/border-top.png);
+    background-size: 10px 3px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-image: url(../i/border-bottom.png);
+    background-size: 10px 3px;
+  }
+}
+
+.ticket__check-title {
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #c76f00;
+}
+
+.ticket__info {
+  font-size: 1.6rem;
+  color: $black;
+
+  & + .ticket__info {
+    margin-top: 1rem;
+  }
+}
+
+.ticket__details {
+  font-weight: 700;
+}
+
+.ticket__hint {
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin-top: 3rem;
+
+  & + .ticket__hint {
+    margin-top: 1rem;
+  }
+}
+
+.ticket__info-qr {
+  display: block;
+  margin: 3rem auto 0;
+  width: 20rem;
+  height: 20rem;
+}
+
+@media screen and (min-width: 479px) {
+  .page-nav .page-nav__day {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .page-header,
+  nav,
+  main {
+    width: 990px;
+    margin: auto;
+  }
+  .movie,
+  .buying {
+    border-radius: 2px;
+  }
+  .buying__info-hint {
+    display: none;
+  }
+}
